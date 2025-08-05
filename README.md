@@ -7,4 +7,4 @@
 - [x] Create `main.lua` file with important functions
 - [x] Create `player.lua` file and render it in window
 - [x] Add ability to move player
-- [] Add `debug.lua` file and show debug info for player (player coordinates, player speed) and game (fps)
+- [x] Add `debug.lua` file and show debug info for player (player coordinates, player speed) and game (fps)
