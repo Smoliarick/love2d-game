@@ -14,7 +14,7 @@
 ### Step 2
 
 - [x] Show mouse coordinates in debugger
-- [] Player must not go beyond the screen boundaries
+- [x] Player must not go beyond the screen boundaries
 - [] Added velocity and acceleration for player
 - [] Added friction for player
 - [] Added ability to shoot for player towards the mouse coordinates (add `bullet.lua` for bullets)

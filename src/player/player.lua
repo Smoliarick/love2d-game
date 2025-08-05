@@ -56,7 +56,12 @@ function Player:move(dt)
   end
 
   self.coordinates.x = self.coordinates.x + direction.x * self.speed * dt
+  self.coordinates.x = math.max(0, self.coordinates.x)
+  self.coordinates.x = math.min(self.coordinates.x, love.graphics.getWidth() - self.size.width)
+
   self.coordinates.y = self.coordinates.y + direction.y * self.speed * dt
+  self.coordinates.y = math.max(0, self.coordinates.y)
+  self.coordinates.y = math.min(self.coordinates.y, love.graphics.getHeight() - self.size.height)
 end
 
 ---Draw Player in window
