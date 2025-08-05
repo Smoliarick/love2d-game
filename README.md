@@ -5,6 +5,6 @@
 - [x] Set up project for working with Lua and Love2D
 - [x] Create project structure
 - [x] Create `main.lua` file with important functions
-- [] Create `player.lua` file and render it in window
+- [x] Create `player.lua` file and render it in window
 - [] Add ability to move player
 - [] Add `debug.lua` file and show debug info for player (player coordinates, player speed) and game (fps)
