@@ -19,12 +19,10 @@ function Player:load()
     height = 32,
   }
 
-  self.velocity = {
-    x = 0,
-    y = 0,
-  }
-
-  self.speed = 250
+  self.velocity = 0
+  self.maxSpeed = 500
+  self.acceleration = 4000
+  self.friction = 3500
 
   return self
 end
@@ -55,11 +53,17 @@ function Player:move(dt)
     direction.y = 1
   end
 
-  self.coordinates.x = self.coordinates.x + direction.x * self.speed * dt
+  self.velocity = math.min(self.velocity + self.acceleration * dt, self.maxSpeed)
+
+  if self.velocity > 0 then
+    self.velocity = math.max(self.velocity - self.friction * dt, 0)
+  end
+
+  self.coordinates.x = self.coordinates.x + direction.x * self.velocity * dt
   self.coordinates.x = math.max(0, self.coordinates.x)
   self.coordinates.x = math.min(self.coordinates.x, love.graphics.getWidth() - self.size.width)
 
-  self.coordinates.y = self.coordinates.y + direction.y * self.speed * dt
+  self.coordinates.y = self.coordinates.y + direction.y * self.velocity * dt
   self.coordinates.y = math.max(0, self.coordinates.y)
   self.coordinates.y = math.min(self.coordinates.y, love.graphics.getHeight() - self.size.height)
 end
