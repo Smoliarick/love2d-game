@@ -11,6 +11,8 @@ end
 ---@param name string unique identificator for message
 ---@param message string debug message
 function Debug:log(name, message)
+  if not self.showDebugInfo then return end
+
   local info = {
     name = name,
     message = message,
@@ -28,10 +30,10 @@ end
 
 ---Draw Debug info in Window
 function Debug:draw()
-  if self.showDebugInfo then
-    for index, info in ipairs(self.debugInfo) do
-      love.graphics.print(info.message, 10, 10 + index * 20)
-    end
+  if not self.showDebugInfo then return end
+
+  for index, info in ipairs(self.debugInfo) do
+    love.graphics.print(info.message, 10, 10 + index * 20)
   end
 end
 
