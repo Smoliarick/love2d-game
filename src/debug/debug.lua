@@ -5,6 +5,8 @@ local Debug = {}
 function Debug:load(showDebugInfo)
   self.showDebugInfo = showDebugInfo
   self.debugInfo = {}
+
+  return self
 end
 
 ---Add log message to Debug object

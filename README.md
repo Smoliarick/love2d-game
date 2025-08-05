@@ -17,4 +17,4 @@
 - [x] Player must not go beyond the screen boundaries
 - [x] Add velocity and acceleration for player
 - [x] Add friction for player
-- [] Add ability to shoot for player towards the mouse coordinates (add `bullet.lua` for bullets)
+- [x] Add ability to shoot for player towards the mouse coordinates (add `bullet.lua` for bullets)
